@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SnakeGame.iml" filepath="$PROJECT_DIR$/.idea/modules/SnakeGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SnakeGame_main.iml" filepath="$PROJECT_DIR$/.idea/modules/SnakeGame_main.iml" group="SnakeGame" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SnakeGame_test.iml" filepath="$PROJECT_DIR$/.idea/modules/SnakeGame_test.iml" group="SnakeGame" />
+    </modules>
+  </component>
+</project>
