@@ -1,5 +1,6 @@
 import java.awt.Color
 import java.awt.Graphics
+import javax.swing.JOptionPane
 import javax.swing.JPanel
 
 class GameView(private val grid: Grid) {
@@ -17,6 +18,11 @@ class GameView(private val grid: Grid) {
 
     fun draw() {
         gameCanvas.repaint()
+    }
+
+    fun gameOver() {
+        JOptionPane.showMessageDialog(null, "Game Over", "Game Over",
+                JOptionPane.INFORMATION_MESSAGE)
     }
 
     private fun drawSnake(graphics: Graphics, snake: Snake) {

@@ -15,19 +15,17 @@ class GameController(private val grid: Grid, private val gameView: GameView) : K
             else -> return
         }
         grid.changeDirection(direction)
-        gameView.draw()
     }
 
     override fun run() {
-        while (isRunning){
+        while (isRunning) {
             try {
                 Thread.sleep(Settings.DEFAULT_MOVE_INTERVAL)
-            }catch (e:InterruptedException){
+            } catch (e: InterruptedException) {
                 break
             }
-            grid.nextRound()
-            gameView.draw()
+            if (grid.nextRound()) gameView.draw() else isRunning = false
         }
-        isRunning=false
+        gameView.gameOver()
     }
 }

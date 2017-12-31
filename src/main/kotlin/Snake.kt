@@ -31,5 +31,7 @@ class Snake {
         return body.removeLast()
     }
 
+    fun hitSelf(): Boolean = body.filter { it == body.first }.size > 1
+
     private fun isNeighbor(a: Node, b: Node) = Math.abs(a.x - b.x) + Math.abs(a.y - b.y) == 1
 }

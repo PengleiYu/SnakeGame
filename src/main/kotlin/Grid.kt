@@ -2,6 +2,7 @@ import java.util.*
 
 class Grid(val width: Int, val height: Int) {
     public val status: Array<BooleanArray> = Array(height) { BooleanArray(width) }
+    private val random = Random()
     private var snakeDirection = Direction.LEFT
     private var snake: Snake
     private var food: Node
@@ -33,10 +34,11 @@ class Grid(val width: Int, val height: Int) {
     fun getFood(): Node = food
 
     /**
-     * 蛇头是否超出边界
+     * 蛇头是否超出边界或装上自身
      */
     private fun isValid(node: Node): Boolean {
-        return node.x in 0..(width - 1) && node.y in 0..(height - 1)
+        return !snake.hitSelf() &&
+                node.x in 0..(width - 1) && node.y in 0..(height - 1)
     }
 
     private fun initSnake(): Snake {
@@ -51,7 +53,6 @@ class Grid(val width: Int, val height: Int) {
      * 创建食物，保证不会出现在蛇身上
      */
     private fun createFood(snake: Snake): Node {
-        val random = Random()
         do {
             food = Node(random.nextInt(width), random.nextInt(height))
         } while (snake.body.contains(food))

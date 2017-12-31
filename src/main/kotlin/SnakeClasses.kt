@@ -19,6 +19,6 @@ class Settings {
         const val DEFAULT_GRID_HEIGHT = 20
         const val DEFAULT_VIEW_WIDTH = DEFAULT_GRID_WIDTH * DEFAULT_NODE_SIZE
         const val DEFAULT_VIEW_HEIGHT = DEFAULT_GRID_HEIGHT * DEFAULT_NODE_SIZE
-        const val DEFAULT_MOVE_INTERVAL = 1000L
+        const val DEFAULT_MOVE_INTERVAL = 500L
     }
 }
