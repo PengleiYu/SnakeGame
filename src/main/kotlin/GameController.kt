@@ -7,7 +7,6 @@ class GameController(private val grid: Grid, private val gameView: GameView) : K
     override fun keyReleased(e: KeyEvent?) {}
 
     override fun keyPressed(e: KeyEvent) {
-        println(e.keyCode)
         val direction: Direction = when (e.keyCode) {
             KeyEvent.VK_UP -> Direction.UP
             KeyEvent.VK_DOWN -> Direction.DOWN
