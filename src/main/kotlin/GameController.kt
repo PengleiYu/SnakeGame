@@ -1,7 +1,8 @@
 import java.awt.event.KeyEvent
 import java.awt.event.KeyListener
 
-class GameController(private val gameView: GameView) : KeyListener {
+class GameController(private val grid: Grid, private val gameView: GameView) : KeyListener, Runnable {
+    private var isRunning = true
     override fun keyTyped(e: KeyEvent?) {}
     override fun keyReleased(e: KeyEvent?) {}
 
@@ -14,7 +15,20 @@ class GameController(private val gameView: GameView) : KeyListener {
             KeyEvent.VK_RIGHT -> Direction.RIGHT
             else -> return
         }
-        gameView.grid.changeDirection(direction)
+        grid.changeDirection(direction)
         gameView.draw()
+    }
+
+    override fun run() {
+        while (isRunning){
+            try {
+                Thread.sleep(Settings.DEFAULT_MOVE_INTERVAL)
+            }catch (e:InterruptedException){
+                break
+            }
+            grid.nextRound()
+            gameView.draw()
+        }
+        isRunning=false
     }
 }

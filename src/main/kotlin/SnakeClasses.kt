@@ -11,3 +11,14 @@ enum class Direction(private val directionCode: Int) {
 }
 
 data class Node(val x: Int, val y: Int)
+
+class Settings {
+    companion object {
+        const val DEFAULT_NODE_SIZE = 20
+        const val DEFAULT_GRID_WIDTH = 20
+        const val DEFAULT_GRID_HEIGHT = 20
+        const val DEFAULT_VIEW_WIDTH = DEFAULT_GRID_WIDTH * DEFAULT_NODE_SIZE
+        const val DEFAULT_VIEW_HEIGHT = DEFAULT_GRID_HEIGHT * DEFAULT_NODE_SIZE
+        const val DEFAULT_MOVE_INTERVAL = 1000L
+    }
+}

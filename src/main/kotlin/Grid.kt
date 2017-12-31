@@ -15,10 +15,9 @@ class Grid(val width: Int, val height: Int) {
         //检查方向是否可改变
         if (snakeDirection.compatibleWith(direction))
             snakeDirection = direction
-        nextRound()
     }
 
-    private fun nextRound(): Boolean {
+    fun nextRound(): Boolean {
         val tail = snake.move(snakeDirection)//移动
         return if (isValid(snake.getHead())) {//蛇头是否非法
             if (snake.getHead() == food) {
