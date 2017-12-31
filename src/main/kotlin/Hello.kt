@@ -1,3 +1,4 @@
 fun main(args: Array<String>) {
-    println("Hello world")
+    val app=SnakeApp()
+    app.init()
 }
